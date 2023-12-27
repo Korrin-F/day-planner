@@ -59,9 +59,10 @@ function updateDate() {
 }
 
 // add event listender that when clicked the text input is saved to local storage
-container.submit("BUTTON", function(event){
+container.on("submit", "form", function(event){
     event.preventDefault();
-    console.log("button clicked");
+    let buttonRow = $(this);
+    let rowHourID = buttonRow.attr('id');
 })
 
 updateDate();
