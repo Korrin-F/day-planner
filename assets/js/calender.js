@@ -3,7 +3,7 @@
 const today = dayjs();
 const container = $("#container-main").addClass("py-4");
 const workHours = [9,10,11,12,13,14,15,16,17];
-
+let todaysSchedule = {};
     
     
 // function to create a row for each hour of the working day 9-5
@@ -64,8 +64,29 @@ container.on("submit", "form", function(event){
     let buttonRow = $(this);
     let rowHourID = buttonRow.attr('id');
     let textValue = buttonRow.find("textarea").val();
-    console.log(textValue);
+    // if there is no value then do nothing
+    if (textValue === ""){
+        return
+    }
+    // save the value to local storage
 })
 
+function getTodaysSchedule() {
+    if (localStorage.getItem("todaysSchedule")){
+        todaysSchedule = JSON.parse(localStorage.getItem("todaysSchedule"))
+    }else{
+        for(let hour of workHours){
+            todaysSchedule[hour] = "";
+        }
+        localStorage.setItem("todaysSchedule", JSON.stringify(todaysSchedule));
+    }
+}
+
+function updateLocalStorage(key, value) {
+    // check to see if there is a local storage key called todaysSchedule
+
+}
+
 updateDate();
+getTodaysSchedule();
 createCalendar();
