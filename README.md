@@ -4,6 +4,8 @@
 
 This is a simple Day Planner that allows you to type in your schedule for the day in each text field. The blue buttons allow you to save the schedule for that row to local storage so it will load the next time you open the app. An added feature is the coloring of the rows. If the row is Grey it means the current time is past this rows time. If the colour is Red that means this rows time represents the current time. If it is Green then it is in the future. 
 
+Visit the deployed app here: [Day Planner](https://korrin-f.github.io/day-planner/)
+
 
 ## Usage 
 
