@@ -63,6 +63,8 @@ container.on("submit", "form", function(event){
     event.preventDefault();
     let buttonRow = $(this);
     let rowHourID = buttonRow.attr('id');
+    let textValue = buttonRow.find("textarea").val();
+    console.log(textValue);
 })
 
 updateDate();
