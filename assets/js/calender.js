@@ -8,10 +8,6 @@ const workHours = [9,10,11,12,13,14,15,16,17];
     
 // function to create a row for each hour of the working day 9-5
 function createCalendar() {
-    // const container = $("#container-main")
-    //     .addClass("py-4");
-    // let workHours = [9,10,11,12,13,14,15,16,17];
-
 
     for(let hour of workHours){
         // add a FORM ROW to container main
@@ -61,6 +57,12 @@ function updateDate() {
     // update the currentDay id with todays date in format Tue, Jan 01st 2024
     $("#currentDay").text(today.format("ddd, Do MMMM YYYY"))
 }
+
+// add event listender that when clicked the text input is saved to local storage
+container.submit("BUTTON", function(event){
+    event.preventDefault();
+    console.log("button clicked");
+})
 
 updateDate();
 createCalendar();
