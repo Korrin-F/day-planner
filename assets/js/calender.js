@@ -27,7 +27,8 @@ function createCalendar() {
 
         // second column is a TEXT BOX
         let textArea = $("<textarea class='col-9'></textarea>")
-            .attr("id", hour); 
+            .attr("id", hour)
+            .text(todaysSchedule[hour]); 
             // update the color settings depending on the current time
         let currentHour = today.hour();
         if (currentHour === hour){
@@ -64,10 +65,7 @@ container.on("submit", "form", function(event){
     let buttonRow = $(this);
     let rowHourID = buttonRow.attr('id');
     let textValue = buttonRow.find("textarea").val();
-    // if there is no value then do nothing
-    if (textValue === ""){
-        return
-    }
+
     // save the value to local storage
     updateLocalStorage(rowHourID, textValue);
 })
