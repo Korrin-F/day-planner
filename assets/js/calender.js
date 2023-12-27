@@ -69,6 +69,7 @@ container.on("submit", "form", function(event){
         return
     }
     // save the value to local storage
+    updateLocalStorage(rowHourID, textValue);
 })
 
 function getTodaysSchedule() {
@@ -83,8 +84,10 @@ function getTodaysSchedule() {
 }
 
 function updateLocalStorage(key, value) {
-    // check to see if there is a local storage key called todaysSchedule
-
+    // update the todaysSchedule object
+    todaysSchedule[key] = value;
+    // update the local storage with the new object
+    localStorage.setItem("todaysSchedule", JSON.stringify(todaysSchedule));
 }
 
 updateDate();
